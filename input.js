@@ -1,3 +1,4 @@
+//获取img预览链接,VUE中方法可以结合-变成一般JS用
 <body>
     <form id="form1" runat="server">
     <div>
