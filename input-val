@@ -1,0 +1,333 @@
+name属性 ：元素的名称；这个不需要多解释了，也就是name的取值代表为当前input元素起个名字；
+size属性 ：元素的宽度；很多人都知道在HTML中，常见的宽度是用 width 表示的，而在input中 width 属性只使用与 type="image" 时使用，input元素的宽度需要通过size属性来设定，size的值为数字，数字越大input元素越长，数字越小input元素越短；
+value属性：定义input元素的默认值；
+当 input type="text"、"password"、"hidden" 时，定义输入字段的初始值；
+当 input type="button", "reset", "submit" 时，定义按钮上的显示的文本；
+当 input type="checkbox", "radio", "image" 时，定义与输入相关联的值；
+注意：input type="checkbox" 和 input type="radio" 中必须设置 value 属性；value属性无法与 input type="file" 一同使用。
+maxlength属性：定义input元素中可输入的最长字符数；如 maxlength="50" 表示最多可以输入50个字符；
+style属性 ：为input元素设定CSS样式；
+width属性 ：当 input type="image"时，通过width属性控制元素的宽度；
+height属性：当 input type="image"时，通过width属性控制元素的高度；
+input type属性大全
+type="text"：创建单行文本输入框
+
+type属性文本输入框
+上图代码的意思依次为：input元素类型为文本输入框；元素长度等于30；最多只能输入20个字符；输入框中默认显示“HTML标签”几个字，设定输入CSS样式高度30像素；文字灰色；请看下方显示效果：
+请在文本框中输入文本，最多20个字符 → 
+HTML的标签
+ 
+
+type="password"：密码输入框
+
+type属性密码输入框
+上图代码的意思依次为：input元素类型为密码输入框；元素长度等于30；最多能输入30个字符；输入框中默认显示为空；请看下方显示效果：
+请输入密码，最多30个字符 → 
+ 
+
+type="radio"：单选按钮
+
+type属性单选按钮
+图中设置input元素为单选按钮，其中value属性中的值用来设置用户选中该项目后提交到数据库中的值；拥有相同name属性的单选框为同一组，一个组里只能同时选中一个选项；而checked属性表示的是初始选项，在用户还没进行选中之前，初始值会选中“女”这个项目；请在下方选择你的性别：
+男    女    同性恋 
+
+type="checkbox"：复选框
+
+type属性复选框
+设置input元素为复选控件，用户可以进行多个选项，其中value属性中的值用来设置用户选中该项目后提交到数据库中的值；name为控件的名称；请在下方选择你去过的城市：
+广州    深圳    珠海    东莞 
+
+type="button"：普通按钮
+
+type属性普通按钮
+通过type="butt"设置普通按钮控件，在value属性中输入的值为按钮上显示的文本；name代表该按钮的名称；onclick表示处理程序；按钮的显示效果也可以通过CSS样式来设置；请点击按钮 → 
+type="submit"：提交按钮
+
+type属性提交按钮
+提交按钮不需要设置onclick参数，在单击提交按钮时可以向服务器发送表单数据，数据会发送到表单的 action 属性中指定的页面；value属性中的值为按钮上显示的文字；请点击提交 → 
+type="reset"：重置按钮
+
+type属性重置按钮
+重置按钮的作用是点击之后表单会刷新回到默认状态，在value属性中输入的值为按钮上显示的文本；
+请点击重置 → 
+type="image"：图像按钮
+
+type属性图像按钮
+虽然显示是图片，实际是以图片的形式按钮；其中src是链接图片的路径；name为图片名称；width图片宽度；height图片高度；当按下图像按钮会以name中的值向服务器发送信息；请点击下方图像按钮：
+提交     提交
+
+type="hidden"：隐藏域
+
+隐藏域在页面上不显示，用来存储与传递表单的值，当用户提交表单时，隐藏域的内容会一起提交给处理程序；语法为：input type="hidden" name="hidden" value="提交的值"/
+type="file"：文件域
+
+用于从本地硬盘中上传文件并提交，语法：﹤input type="file" name="file" /﹥请在下方上传您的文件；
+
+
+
+HTML5新增input type属性
+
+input type="url"：输入URL字段
+input type="tel" name="tel"：用来输入电话号码
+
+type="search"：搜索字符串
+
+语法：input type="search" name="search" 请搜索 → 
+type="email"：该控件用来输入"email"地址
+
+若用户输入的非email格式，那么在支持HTML5的浏览器中提交该表单时，会提示为不是合法格式；
+type="color"：颜色选择器；语法为：﹤input type="color" id="color"﹥
+
+使用color属性能直接调用系统的颜色调节窗口，默然为黑色；请选择颜色 → 
+type="number"：数字字段
+
+type属性输入数字字段
+用于输入数字的字段，其中min设定允许的最小值；max设定允许的最大值；value规定默认值；还有step可规定合法数字间隔；请输入数字字段 → 
+3
+type="range"：输入数值控件；
+
+type属性输入数值控件
+定义用于精确值不重要的输入数字的控件；min属性指定最小值限制，max属性指定最大值限制，step属性规定合法数字间隔，value属性规定默认值，请选择 → 
+type="month"：年月控件
+
+语法：input type="month" value="2016-08" value属性用来控制年月；若使用type="week"则为控制(年/周)
+type="date"：日期控件
+
+type属性日期控件
+可用来选择或输入日期，包括（年/月/日）不包括时间；其中设定 min 属性控制开始日期，max 属性控制结束日期；请选择日期 → 
+ 如果使用type="time" 则用来输入时间，不包括日期。
+type="datetime"：日期加时间控件（基于UTC时区）
+
+type属性日期加时间控件
+创建日期时间，包括（年/月/日/时/分/秒/零点几秒） → 
+2016-08-21T22:47Z
+type="datetime-local"：日期加时间控件（不带时区）
+
+时间加日期不带时区
+创建本地日期时间，包括（年/月/日/时/分/秒/零点几秒） → 
+2016-08-21T22:47
+
+传统属性name type accept alt checked disabled readonly maxlength size src value新增属性autocomplete autofocus novalidate height width list min max step multiple pattern placeholder required form formaction formenctype formmethod formnovalidate formtarget
+前面的话
+　　form元素只是一个数据获取元素的容器，而容器内的元素称为表单控件。最常用的表单控件是input元素
+
+　　accept、alt、checked、disabled、maxlength、name、readonly、size、src、type、value这11个属性是input元素的传统元素属性
+
+　　autocomplete、autofocus、form、formaction、formenctype、formmethod、formnovalidate、formtarget、height、list、max、min、multiple、novalidate、pattern、placeholder、required、step、width这19个属性是HTML5新增的元素属性
+
+ 
+
+传统属性
+name
+　　name属性用于规定input元素的名称，用于对提交到服务器后的表单数据进行标识，或者在客户端通过javascript引用表单数据
+
+　　[注意]只有设置了name属性的表单元素才能在提交表单时传递它们的值
+
+type
+　　type属性用来规定input元素的类型
+
+　　[注意]如果input元素没有设置type属性，或者设置的值在浏览器中不支持，那么输入类型会变成type="text"
+
+　　详细情况移步至此
+
+accept
+　　accept属性用来规定能够通过文件上传进行提交的文件类型。理论上可以用来限制上传文件类型，然而它只是建设性的，并很可能被忽略，它接受逗号分隔的MIME类型
+
+　　[注意]该属性只能与type="file"配合使用
+
+<input type="file" accept="image/gif,image/jpeg,image/jpg">
+alt
+　　alt属性为图像输入规定替代文本，功能类似于image元素的alt属性，为用户由于某些原因无法查看图像时提供备选信息
+
+　　[注意]alt属性只能与type="image"的input元素配合使用
+
+<input type="image" src="#" alt="测试图片">
+checked
+　　checked属性规定在页面加载时应该被预先选定的input元素，也可以在页面加载后，通过javascript进行设置
+
+　　[注意]checked属性只能与type="radio"或type="checkbox"的input元素配合使用
+
+<input type="radio" name="radio" value="1" checked><input type="radio" name="radio" value="2"><input type="checkbox" name="checkbox" value="1"><input type="checkbox" name="checkbox" value="2"><script>var oInput = document.getElementsByTagName('input');for(var i = 0,len = oInput.length; i < len; i++){    oInput[i].onmouseover = function(){        this.checked = 'checked';    }}    </script>
+disabled
+　　disabled属性规定应该禁用input元素。被禁用的字段是不能修改的，也不可以使用tab按键切换到该字段，但可以选中或拷贝其文本
+
+　　[注意1]disabled属性无法与type="hidden"的input元素一起使用
+
+　　[注意2]对于IE7-浏览器必须设置为disabled="disabled"，而不可以直接设置disabled，否则使用javascript控制时将失效
+
+<button id="btn1">输入域可用</button><button id="btn2">输入域不可用</button><input id="test" disabled value="内容"><script>btn1.onclick = function(){    test.removeAttribute('disabled');}    btn2.onclick = function(){    test.setAttribute('disabled','disabled');}    </script>
+readonly
+　　readonly属性规定输入字段为只读。只读字段是不能修改的，但用户仍然可以使用tab按键切换到该字段，还可以选中或拷贝其文本
+
+　　readonly属性可与type="text"或"password"的input元素配合使用
+
+　　[注意]IE7-浏览器不支持使用javascript控制readonly属性
+
+<button id="btn1">输入域只读</button><button id="btn2">输入域可读写</button><input id="test" value="内容" readonly><script>btn1.onclick = function(){    test.setAttribute('readonly','readonly');}btn2.onclick = function(){    test.removeAttribute('readonly');}    </script>
+maxlength
+　　maxlength属性规定输入字段的最大长度，以字符个数计
+
+　　[注意]该属性只能与type="text"或type="password"的input元素配合使用
+
+<input maxlength="6"><input type="password" maxlength="6">
+size
+　　size属性对于type="text"或"password"的input元素是可见的字符数；而对于其他类型，是以像素为单位的输入字段宽度
+
+　　[注意]由于size属性是一个可视化的设计属性，推荐使用CSS来代替它
+
+<input size="1"><input type="password" size="2">
+src
+　　src属性作为提交按钮显示的图像的URL
+
+　　[注意]src属性只能且必须与type="image"的input元素配合使用
+
+<form action="#">    <input name="test">    <input type="image" src="http://sandbox.runjs.cn/uploads/rs/26/ddzmgynp/submit.jpg" width="99" height="99" alt="测试图片"></form>
+value
+　　value属性为input元素设定值。对于不同的输入类型，value属性的用法也不同：
+
+　　type="button"、"reset"、"submit"用于定义按钮上的显示的文本
+
+　　type="text"、"password"、"hidden"用于定义输入字段的初始值
+
+　　type="checkbox"、"radio"、"image"用于定义与输入相关联的值
+
+　　[注意1]type="checkbox"或"radio"必须设置value属性
+
+　　[注意2]value属性无法与type="file"的input元素一起使用
+
+<button id="btn1">1</button><button id="btn2">2</button><input id="test"><script>btn1.onclick = btn2.onclick =function(){    test.value=this.innerHTML;}    </script>
+ 
+
+新增属性
+autocomplete
+　　autocomplete属性可以在个别元素或整个表单上开启或关闭浏览器的自动完成功能。当用户在字段开始键入时，浏览器基于之前键入过的值，显示出在字段中填写的选项
+
+　　autocomplete属性适用form元素以及以下类型的input元素：text、search、url、telephone、email、password、date pickers、range、color
+
+　　[注意]IE浏览器不支持该属性，只有元素拥有name属性，该属性才有效
+
+<input name="test1" autocomplete="on"><input name="test2" autocomplete="off">    
+　　详细情况移步至此
+
+autofocus
+　　autofocus属性规定在页面加载时，域自动地获得焦点
+
+　　autofous属性适用于button、input、keygen、select和textarea元素
+
+<input name="test1"><input name="test2" autofocus>
+novalidate
+　　novalidate属性规定在提交表单时不验证form或input域
+
+　　novalidate属性适用于form元素以及以下类型的input元素：text、search、url、telephone、email、password、date pickers、range、color
+
+　　[注意]IE9-浏览器不支持
+
+　　详细情况移步至此
+
+height
+　　height属性用于规定image类型的input标签的图像高度
+
+　　[注意]该属性只适用于image类型的input标签
+
+width
+　　width属性用于规定image类型的input标签的图像宽度
+
+　　[注意]该属性只适用于image类型的input标签
+
+//http://127.0.0.1/form.html?test=123&x=38&y=57#<form action="#">    <input name="test">    <input type="image" src="submit.jpg" width="99" height="99"></form>
+list
+　　大多数输入类型包含一个属性list，它和一个新元素datalist结合使用，这个元素定义当在表单控件输入数据时可用的一个选项列表。datalist元素自身不会在页面显示，而是为其他元素的list属性提供数据
+
+　　list属性适用于form元素以及以下类型的input元素：text、search、url、telephone、email、password、date pickers、range、color
+
+　　[注意]IE9-浏览器及safari浏览器不支持
+
+　　详细情况移步至此
+
+min
+　　min属性规定输入域所允许的最大值 
+
+max
+　　max属性规定输入域所允许的最小值
+
+step
+　　step属性为输入域规定合法的数字间隔
+
+　　min、max、step属性适用于以下类型的input元素:date pickers、number、range
+
+<input type="number" min="0" max="10" step="0.5" value="6" />
+<input type="range" min="0" max="10" step="0.5" value="6" />
+multiple
+　　multiple属性规定按住ctrl按键，输入字段可以选择多个值
+
+　　该属性适用于type="email"和"file"的input元素
+
+　　[注意]该属性IE9-浏览器不支持
+
+<button id="btn1">打开文件多选</button><button id="btn2">关闭文件多选</button><br><br><input id="test" type="file" multiple><script>btn1.onclick = function(){    test.setAttribute('multiple','');};btn2.onclick = function(){    test.removeAttribute('multiple');};</script>
+pattern
+　　pattern属性规定用于验证input域的模式。模型pattern是正则表达式
+
+　　pattern属性适用于以下类型的input元素：text、search、url、tel、email、password
+
+　　[注意]IE9-浏览器及safari浏览器不支持
+
+<form action="#">    <input pattern="/d{3}">        <input type="submit"></form>
+placeholder
+　　placeholder属性提供占位符文字，描述输入域所期待的值。占位符会在输入域为空时显示出现，在输入域获得焦点时消失
+
+　　placeholder属性适用于以下类型的input元素:text、search、url、tel、email、password
+
+　　[注意]IE9-浏览器不支持
+
+<form action="#">    <input type="tel" placeholder="请输入数字" pattern="/d{11}">        <input type="submit"></form>
+required
+　　required属性规定必须在提交之前填写输入域(不能为空)
+
+　　required属性适用于以下类型的input元素：text、search、url、telephone、email、password、date pickers、number、checkbox、radio、file
+
+　　[注意]IE9-浏览器及safari浏览器不支持
+
+<form action="#">    <input required>        <input type="submit"></form>
+form
+　　form属性规定输入域所属的一个或多个表单，form属性必须和所属表单的id
+
+　　form属性适用于所有input标签的类型，若需要引用一个以上的表单时，用空格分隔
+
+　　[注意]IE浏览器不支持该属性，只有元素拥有name属性，该属性才有效
+
+<form id="form" action="#">    <input type="submit"></form><input name="test" form="form">
+表单重写属性
+
+　　表单重写属性允许重写form元素的某些属性设定。其中，formnovalidate适用于button或input元素，而其他属性适用于submit或reset的button或input元素
+
+formaction
+　　重写表单的action属性
+
+　　关于action的详细信息移步至此
+
+<form action="#" >First name: <input type="text" name="fname" /><br />Last name: <input type="text" name="lname" /><br /><input type="submit" value="提交" /><br /><input type="submit" formaction="#" value="以管理员身份提交" /></form>
+formenctype
+　　重写表单的enctype属性
+
+　　关于enctype的详细信息移步至此
+
+<form action="#" method="post">  First name: <input type="text" name="fname" /><br />  <input type="submit" value="提交" />  <input type="submit" formenctype="multipart/form-data" value="以multipart/form-data编码提交" /></form>
+formmethod
+　　重写表单的method属性
+
+　　关于method的详细信息移步至此
+
+<form action="#" method="get">  First name: <input type="text" name="fname" /><br />  Last name: <input type="text" name="lname" /><br /><input type="submit" value="提交" /><input type="submit" formmethod="post" formaction="#" value="使用POST提交" /></form>
+formnovalidate
+　　重写表单的novalidate属性
+
+　　关于novalidate的详细信息移步至此
+
+<form action="#" method="get">E-mail: <input type="email" name="userid" /><br /><input type="submit" value="提交" /><br /><input type="submit" formnovalidate="formnovalidate" value="进行没有验证的提交" /></form>
+formtarget
+　　重写表单的target属性
+
+　　关于target的详细信息移步至此
+
+<form action="#">  First name: <input type="text" name="fname" /><br />  Last name: <input type="text" name="lname" /><br /><input type="submit" value="提交" /><input type="submit" formtarget="_blank" value="提交到新窗口/选项卡" /></form>    
