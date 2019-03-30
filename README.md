@@ -10,3 +10,5 @@
   
 4:批量获取input的val值
   var valArr = $(".write_capture_area").map(function(){return $(this).val()}).get()
+
+5:form表单上传七牛-input
