@@ -1,0 +1,51 @@
+//HTML
+			<form id="myform" name="myform" action="your_url" method="post" enctype="multipart/form-data" >
+
+    <div id="sendBefore">
+         <p>上传视频</p>
+        <input id="videoForm" type="file" name="videos[]" multiple= "multiple" />
+    </div>  
+<form>
+
+
+JS
+///需要后台提供token,可直接上传七牛
+$.ajax({
+      //获取后台给你下发的token
+      url: 'http://ka1.yq80.cn/api/common/getTokener',
+      type: 'GET',
+  }).done(function(res){
+  	console.log(JSON.stringify(res))
+  	var token=res.uptoken
+      //发送视频请求
+      var formData = new FormData(),  
+          //七牛给你的域名  
+          vistUrl  = 'zf.yq80.cn',     
+          fS       = null,
+          fStota   = null;    
+          //必传的二个值当前的文件和你的token验证 
+          formData.append('file', $('#videoForm')[0].files[0]);         
+          formData.append('token',token)
+                $.ajax({
+                    url: 'http://upload.qiniup.com',
+                    type: 'POST',
+                    cache: false,
+                    data: formData,
+                    processData: false,
+                   dataType:'json',
+                    contentType: false,
+                }).done(function(res) {   
+                	console.log('成功')
+                	console.log(JSON.stringify(res))
+                    //拼接返回的视频地址，这里的vframe/jpb/offset/1是七牛的视频截取图片的接口          
+                  //  $('.v-box').find('img').attr('src',vistUrl+res.hash+'?vframe/jpg/offset/1').show();                    
+                    //$('#videoForm').val('');                    
+
+                }).fail(function(res) {
+                	console.log('失败')
+                    console.log(JSON.stringify(res));
+                });
+            }).fail(function(res){
+                console.log(res);
+            })       
+            }
