@@ -6,3 +6,7 @@
 
 3:input标签的各个属性
   链接地址:https://blog.csdn.net/chao430/article/details/64904798
+  
+  
+4:批量获取input的val值
+  var valArr = $(".write_capture_area").map(function(){return $(this).val()}).get()
